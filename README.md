@@ -24,6 +24,7 @@ the first element that matches these selectors.
 - Code example for `document.querySelector('div')`, the method would return the first `div` (whose content is "Hello!").
 
 - More specifically explained code example for 
+
 // get <li>2</li>
 const li2 = document.querySelector('ul.ranked-list li ul li')
 
