@@ -16,7 +16,7 @@ good, we can improve our search when we use document structure (tag, `id`, `clas
 To practice finding elements in the DOM, we're going to make use of two methods that are useful for navigating the DOM: `document.querySelector()` and
 `document.querySelectorAll()`.
 
-## Use `document.querySelector()` and `document.querySelectorAll()` to find nested nodes
+## Use `document.querySelector()` and `document.querySelectorAll()` to Find Nested Nodes
 
 ### `querySelector()`
 
@@ -89,14 +89,14 @@ Then find an `li` that is a child of that `ul`. Then find a `ul` that is a
 child (but not necessarily a direct descendant) of that `li`. Finally, find an
 `li` that is a child of that (second) `ul`."
 
-**NOTE:** The HTML property `class` is referred to as `className` in JavaScript. It's mildly confusing, but we can memorize it and get past it with enough time.
+_NOTE: The HTML property `class` is referred to as `className` in JavaScript._
 
-What, then, does the second call to `querySelector()` say? Puzzle it out for a
-bit, and then read on.
+What does the second call to `querySelector()` say? Think about it for a
+minute, and then read on.
 
 Wait for it...
 
-Okay, the second call says, "Starting from `document`, find a `ul` with a
+The second call says, "Starting from `document`, find a `ul` with a
 `className` of `unranked-list`. Then find an `li` descended from `ul.unranked-
 list` and a `div` descended from that `li`."
 
