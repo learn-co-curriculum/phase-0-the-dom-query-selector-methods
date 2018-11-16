@@ -11,9 +11,11 @@ One of the most essential skills in our web development toolbox is finding
 elements in the DOM.
 
 While `document.getElementById()` and `document.getElementsByClassName()` are
-good, we can improve our search when we use document structure (tag, `id`, `class`) **and** the tree structure of the DOM.
+good, we can improve our search when we use document structure (tag, `id`,
+`class`) **and** the tree structure of the DOM.
 
-To practice finding elements in the DOM, we're going to make use of two methods that are useful for navigating the DOM: `document.querySelector()` and
+To practice finding elements in the DOM, we're going to make use of two methods
+that are useful for navigating the DOM: `document.querySelector()` and
 `document.querySelectorAll()`.
 
 ## Use `document.querySelector()` and `document.querySelectorAll()` to Find Nested Nodes
@@ -25,7 +27,7 @@ the first element that matches these selectors.
 
 Given a document like
 
-``` html
+```html
 <body>
   <div>
     Hello!
@@ -43,7 +45,7 @@ If we called `document.querySelector('div')`, the method would return the first
 Selectors aren't limited to one tag name, though (otherwise why not just use
 `document.getElementsByTagName('div')[0]`?). We can get very specific.
 
-``` html
+```html
 <body>
   <div>
     <ul class="ranked-list">
@@ -102,7 +104,7 @@ list` and a `div` descended from that `li`."
 
 #### CSS Selectors
 
-Remember selectors? Now is probably a good time to brush up on [selectors][]. Play
+Remember selectors? Now is probably a good time to brush up on [selectors][selectors]. Play
 around on the MDN page, then come back when you're ready.
 
 ### `querySelectorAll()`
@@ -130,13 +132,11 @@ Given a document like
 
 If we called `document.getElementById('app').querySelectorAll('ul.ranked-list li')`, we'd get back a list of Nodes corresponding to: `<li>1</li>, <li>2</li>, <li>10</li>, <li>11</li>`.
 
-
 ## Conclusion
 
 The DOM selection methods `document.querySelector()` and
 `document.querySelectorAll()` are powerful tools for finding elements we need
 to update and change. 
-
 
 ## Resources
 
@@ -144,3 +144,5 @@ to update and change.
 - [document.querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
 
 [selectors]: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/fewpjs-queryselector-methods'>JavaScript Node Search Power Tools</a> on Learn.co and start learning to code for free.</p>
