@@ -12,7 +12,10 @@ elements in the DOM.
 
 While `document.getElementById()` and `document.getElementsByClassName()` are
 good, we can improve our search when we use document structure (tag, `id`,
-`class`) **and** the tree structure of the DOM.
+`class`) **and** the tree structure of the DOM. It turns out CSS is a _great_
+language for expressing those relationships! With the following methods we provide
+a CSS selector as argument and we get back the collections _or_ specific node
+we want.
 
 To practice finding elements in the DOM, we're going to make use of two methods
 that are useful for navigating the DOM: `document.querySelector()` and
