@@ -25,7 +25,7 @@ that are useful for navigating the DOM: `document.querySelector()` and
 
 ### `querySelector()`
 
-`querySelector()` takes one argument, a string of [selectors][], and returns
+`querySelector()` takes one argument, a string of CSS-compatible [selectors][], and returns
 the first element that matches these selectors.
 
 Given a document like
@@ -107,15 +107,17 @@ list` and a `div` descended from that `li`."
 
 #### CSS Selectors
 
-Remember selectors? Now is probably a good time to brush up on [selectors][selectors]. Play
-around on the MDN page, then come back when you're ready.
+Now might be a good time to brush up on [selectors][selectors] if using CSS to
+target elements isn't feeling natural. Play around on the MDN page, then come
+back when you're ready.
 
 ### `querySelectorAll()`
 
 `querySelectorAll` works a lot like `querySelector()` — it accepts a selector
 as its argument, and it searches starting from the element that it's called on
 (or from `document`) — but instead of returning the first match, it returns a
-`NodeList` (which, remember, is not an `Array`) of all matching elements.
+`NodeList` collection (which, remember, is not _technically_ an `Array`) of
+all matching elements.
 
 Given a document like
 
@@ -133,13 +135,21 @@ Given a document like
 </main>
 ```
 
-If we called `document.getElementById('app').querySelectorAll('ul.ranked-list li')`, we'd get back a list of Nodes corresponding to: `<li>1</li>, <li>2</li>, <li>10</li>, <li>11</li>`.
+If we called
+
+```js
+document.getElementById('app').querySelectorAll('ul.ranked-list li')
+```
+
+We'd get back a list of Nodes corresponding to: `<li>1</li>, <li>2</li>, <li>10</li>, <li>11</li>`.
 
 ## Conclusion
 
 The DOM selection methods `document.querySelector()` and
 `document.querySelectorAll()` are powerful tools for finding elements we need
-to update and change. 
+to update and change. They use the CSS selector syntax and that helps keep 
+human brains happy: we only need to learn _one_ selector language. Wasn't tha
+considerate?
 
 ## Resources
 
