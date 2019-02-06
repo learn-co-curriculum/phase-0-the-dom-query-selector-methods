@@ -148,7 +148,7 @@ We'd get back a list of Nodes corresponding to: `<li>1</li>, <li>2</li>, <li>10<
 The DOM selection methods `document.querySelector()` and
 `document.querySelectorAll()` are powerful tools for finding elements we need
 to update and change. They use the CSS selector syntax and that helps keep 
-human brains happy: we only need to learn _one_ selector language. Wasn't tha
+human brains happy: we only need to learn _one_ selector language. Wasn't that
 considerate?
 
 ## Resources
