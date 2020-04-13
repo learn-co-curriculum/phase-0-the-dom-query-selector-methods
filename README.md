@@ -90,9 +90,9 @@ In the above example, the first query says, "Starting from `document` (the
 object we've called `querySelector()` on), find a `ul` with a `className` of
 `ranked-list` (the `.` is for `className`).
 
-Then find an `li` that is a child of that `ul`. Then find a `ul` that is a
-child (but not necessarily a direct descendant) of that `li`. Finally, find an
-`li` that is a child of that (second) `ul`."
+Then find an `li` that is a descendant of that `ul`. Then find a `ul` that is a
+descendant (but not necessarily a direct child) of that `li`. Finally, find an
+`li` that is a descendant of that (second) `ul`."
 
 _NOTE: The HTML property `class` is referred to as `className` in JavaScript._
 
