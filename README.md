@@ -157,5 +157,3 @@ considerate?
 - [document.querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
 
 [selectors]: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/fewpjs-queryselector-methods'>JavaScript Node Search Power Tools</a> on Learn.co and start learning to code for free.</p>
