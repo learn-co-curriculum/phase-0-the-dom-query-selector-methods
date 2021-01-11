@@ -102,8 +102,8 @@ minute, and then read on.
 Wait for it...
 
 The second call says, "Starting from `document`, find a `ul` with a
-`className` of `unranked-list`. Then find an `li` descended from `ul.unranked-
-list` and a `div` descended from that `li`."
+`className` of `unranked-list`. Then find an `li` descended from
+`ul.unranked-list` and a `div` descended from that `li`."
 
 #### CSS Selectors
 
