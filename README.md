@@ -1,4 +1,4 @@
-# JavaScript 'querySelector()' Methods
+# JavaScript Query Selector Methods
 
 ## Learning Goals
 
@@ -15,9 +15,9 @@ good, we can improve our search when we use document structure (tag, `id`,
 `class`) **along with** the tree structure of the DOM. It turns out CSS is a
 _great_ language for expressing those relationships! With the `querySelector()`
 and `querySelectorAll()` methods, we provide one or more CSS selectors as an
-argument and we get back the matching element or elements, respectively. Because
-they can take a string containing multiple selectors, they allow us to create
-very specific, complex queries.
+argument and we get back the matching element or elements. Because they can take
+a string containing multiple selectors, they allow us to create very specific,
+complex queries.
 
 ## Use `querySelector()` and `querySelectorAll()` to Find Nested Nodes
 
@@ -148,16 +148,15 @@ If we called
 document.getElementById('app').querySelectorAll('ul.ranked-list li');
 ```
 
-We'd get back a list of nodes corresponding to: `<li>1</li>, <li>2</li>,
-<li>10</li>, <li>11</li>`.
+We'd get back a list of nodes corresponding to: `<li>1</li>, <li>2</li>, <li>10</li>, <li>11</li>`.
 
 ## Conclusion
 
 The DOM selection methods `document.querySelector()` and
 `document.querySelectorAll()` are powerful tools for finding the elements we
 need to update and change. They use the familiar CSS selector syntax and allow
-us to create very specific queries to gain access to elements in complex DOM
-trees.
+us to create very specific queries that give us access to elements in complex
+DOM trees.
 
 ## Resources
 
