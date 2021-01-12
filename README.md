@@ -1,9 +1,9 @@
-# JavaScript Node Search Power Tools
+# JavaScript 'querySelector()' Methods
 
 ## Learning Goals
 
-1. Use `document.querySelector()` and `document.querySelectorAll()` to find nested nodes
-2. Change value of targeted DOM nodes
+* Use `querySelector()` and `querySelectorAll()` to find nested nodes
+* Modify attributes of DOM nodes
 
 ## Introduction
 
@@ -12,23 +12,25 @@ elements in the DOM.
 
 While `document.getElementById()` and `document.getElementsByClassName()` are
 good, we can improve our search when we use document structure (tag, `id`,
-`class`) **and** the tree structure of the DOM. It turns out CSS is a _great_
-language for expressing those relationships! With the following methods we provide
-a CSS selector as argument and we get back the collections _or_ specific node
-we want.
+`class`) **along with** the tree structure of the DOM. It turns out CSS is a
+_great_ language for expressing those relationships! With the `querySelector()`
+and `querySelectorAll()` methods, we provide one or more CSS selectors as an
+argument and we get back the matching element or elements, respectively. Because
+they can take a string containing multiple selectors, they allow us to create
+very specific, complex queries.
 
-To practice finding elements in the DOM, we're going to make use of two methods
-that are useful for navigating the DOM: `document.querySelector()` and
-`document.querySelectorAll()`.
+## Use `querySelector()` and `querySelectorAll()` to Find Nested Nodes
 
-## Use `document.querySelector()` and `document.querySelectorAll()` to Find Nested Nodes
+If you would like to follow along in the console, fork and clone this lesson,
+open the files in your text editor, and open `index.html` in Google Chrome. As
+you go, copy each HTML example into `index.html`.
 
 ### `querySelector()`
 
-`querySelector()` takes one argument, a string of CSS-compatible [selectors][], and returns
-the first element that matches these selectors.
+The `querySelector()` method takes one argument, a string of one or more
+CSS-compatible [selectors][], and returns the _first_ element that matches.
 
-Given a document like
+Given a document like:
 
 ```html
 <body>
@@ -43,10 +45,10 @@ Given a document like
 ```
 
 If we called `document.querySelector('div')`, the method would return the first
-`div` (whose content is "Hello!").
+`div`. If we check its `innerHTML`, we should see `Hello!`.
 
-Selectors aren't limited to one tag name, though (otherwise why not just use
-`document.getElementsByTagName('div')[0]`?). We can get very specific.
+Selectors aren't limited to one tag name, though. Otherwise, why not just use
+`document.getElementsByTagName('div')[0]`? We can get very specific.
 
 ```html
 <body>
@@ -77,24 +79,25 @@ Selectors aren't limited to one tag name, though (otherwise why not just use
 ```
 
 ```javascript
+const li2 = document.querySelector('ul.ranked-list li ul li');
+li2;
+//=> <li>2</li>
 
-// get <li>2</li>
-const li2 = document.querySelector('ul.ranked-list li ul li')
-
-// get <div>4</div>
-const div4 = document.querySelector('ul.unranked-list li div')
-
+const div4 = document.querySelector('ul.unranked-list li div');
+div4;
+//=> <div>4</div>
 ```
 
 In the above example, the first query says, "Starting from `document` (the
 object we've called `querySelector()` on), find a `ul` with a `className` of
-`ranked-list` (the `.` is for `className`).
+`ranked-list` (recall from CSS that the `.` indicates that `ranked-list` is a
+`className`).
 
-Then find an `li` that is a descendant of that `ul`. Then find a `ul` that is a
+Then find an `li` that is a descendant of that `ul`. Next find a `ul` that is a
 descendant (but not necessarily a direct child) of that `li`. Finally, find an
 `li` that is a descendant of that (second) `ul`."
 
-_NOTE: The HTML property `class` is referred to as `className` in JavaScript._
+**Note**: The HTML property `class` is referred to as `className` in JavaScript.
 
 What does the second call to `querySelector()` say? Think about it for a
 minute, and then read on.
@@ -107,53 +110,58 @@ The second call says, "Starting from `document`, find a `ul` with a
 
 #### CSS Selectors
 
-Now might be a good time to brush up on [selectors][selectors] if using CSS to
-target elements isn't feeling natural. Play around on the MDN page, then come
+If using CSS to target elements isn't feeling natural, now might be a good time
+to brush up on [selectors][selectors]. Play around on the MDN page, then come
 back when you're ready.
 
 ### `querySelectorAll()`
 
-`querySelectorAll` works a lot like `querySelector()` — it accepts a selector
-as its argument, and it searches starting from the element that it's called on
-(or from `document`) — but instead of returning the first match, it returns a
-`NodeList` collection (which, remember, is not _technically_ an `Array`) of
-all matching elements.
+`querySelectorAll` works a lot like `querySelector()` &mdash; it accepts a
+string containing one or more selectors as its argument, and it searches
+starting from the object that it's called on  (either `document` or an element).
+However, instead of returning the first match, it returns a `NodeList`
+collection of all matching elements. A `NodeList` is similar to an
+`HTMLCollection`: it is an array-like structure containing, in this case, a list
+of DOM nodes.
 
 Given a document like
 
 ``` html
-<main id="app">
-  <ul class="ranked-list">
-    <li>1</li>
-    <li>2</li>
-  </ul>
+<body>
+  <main id="app">
+    <ul class="ranked-list">
+      <li>1</li>
+      <li>2</li>
+    </ul>
 
-  <ul class="ranked-list">
-    <li>10</li>
-    <li>11</li>
-  </ul>
-</main>
+    <ul class="ranked-list">
+      <li>10</li>
+      <li>11</li>
+    </ul>
+  </main>
+</body>
 ```
 
 If we called
 
 ```js
-document.getElementById('app').querySelectorAll('ul.ranked-list li')
+document.getElementById('app').querySelectorAll('ul.ranked-list li');
 ```
 
-We'd get back a list of Nodes corresponding to: `<li>1</li>, <li>2</li>, <li>10</li>, <li>11</li>`.
+We'd get back a list of nodes corresponding to: `<li>1</li>, <li>2</li>,
+<li>10</li>, <li>11</li>`.
 
 ## Conclusion
 
 The DOM selection methods `document.querySelector()` and
-`document.querySelectorAll()` are powerful tools for finding elements we need
-to update and change. They use the CSS selector syntax and that helps keep 
-human brains happy: we only need to learn _one_ selector language. Wasn't that
-considerate?
+`document.querySelectorAll()` are powerful tools for finding the elements we
+need to update and change. They use the familiar CSS selector syntax and allow
+us to create very specific queries to gain access to elements in complex DOM
+trees.
 
 ## Resources
 
-- [document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
-- [document.querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+* [document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+* [document.querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
 
 [selectors]: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors
