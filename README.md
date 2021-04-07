@@ -91,13 +91,11 @@ div4;
 In the above example, the first query says, "Starting from `document` (the
 object we've called `querySelector()` on), find a `ul` with a `className` of
 `ranked-list` (recall from CSS that the `.` indicates that `ranked-list` is a
-`className`).
+`className`). Then find an `li` that is a descendant of that `ul`. Next find a 
+`ul` that is a descendant (but not necessarily a direct child) of that `li`. 
+Finally, find an `li` that is a descendant of that (second) `ul`."
 
-Then find an `li` that is a descendant of that `ul`. Next find a `ul` that is a
-descendant (but not necessarily a direct child) of that `li`. Finally, find an
-`li` that is a descendant of that (second) `ul`."
-
-**Note**: The HTML property `class` is referred to as `className` in JavaScript.
+>**Note**: The HTML property `class` is referred to as `className` in JavaScript.
 
 What does the second call to `querySelector()` say? Think about it for a
 minute, and then read on.
@@ -116,7 +114,7 @@ back when you're ready.
 
 ### `querySelectorAll()`
 
-`querySelectorAll` works a lot like `querySelector()` &mdash; it accepts a
+`querySelectorAll()` works a lot like `querySelector()` &mdash; it accepts a
 string containing one or more selectors as its argument, and it searches
 starting from the object that it's called on  (either `document` or an element).
 However, instead of returning the first match, it returns a `NodeList`
