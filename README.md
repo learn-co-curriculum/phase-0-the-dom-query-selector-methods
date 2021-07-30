@@ -114,7 +114,7 @@ back when you're ready.
 
 ### `querySelectorAll()`
 
-`querySelectorAll()` works a lot like `querySelector()` &mdash; it accepts a
+`querySelectorAll()` works a lot like `querySelector()` — it accepts a
 string containing one or more selectors as its argument, and it searches
 starting from the object that it's called on  (either `document` or an element).
 However, instead of returning the first match, it returns a `NodeList`
