@@ -2,8 +2,8 @@
 
 ## Learning Goals
 
-* Use `querySelector()` and `querySelectorAll()` to find nested nodes
-* Modify attributes of DOM nodes
+- Use `querySelector()` and `querySelectorAll()` to find nested nodes
+- Modify attributes of DOM nodes
 
 ## Introduction
 
@@ -19,7 +19,7 @@ argument and we get back the matching element or elements. Because they can take
 a string containing multiple selectors, they allow us to create very specific,
 complex queries.
 
-## Use `querySelector()` and `querySelectorAll()` to Find Nested Nodes
+## Finding Nested Nodes
 
 If you would like to follow along in the console, fork and clone this lesson,
 open the files in your text editor, and open `index.html` in Google Chrome. As
@@ -34,13 +34,8 @@ Given a document like:
 
 ```html
 <body>
-  <div>
-    Hello!
-  </div>
-
-  <div>
-    Goodbye!
-  </div>
+  <div>Hello!</div>
+  <div>Goodbye!</div>
 </body>
 ```
 
@@ -78,12 +73,12 @@ Selectors aren't limited to one tag name, though. Otherwise, why not just use
 </body>
 ```
 
-```javascript
-const li2 = document.querySelector('ul.ranked-list li ul li');
+```js
+const li2 = document.querySelector("ul.ranked-list li ul li");
 li2;
 //=> <li>2</li>
 
-const div4 = document.querySelector('ul.unranked-list li div');
+const div4 = document.querySelector("ul.unranked-list li div");
 div4;
 //=> <div>4</div>
 ```
@@ -91,11 +86,12 @@ div4;
 In the above example, the first query says, "Starting from `document` (the
 object we've called `querySelector()` on), find a `ul` with a `className` of
 `ranked-list` (recall from CSS that the `.` indicates that `ranked-list` is a
-`className`). Then find an `li` that is a descendant of that `ul`. Next find a 
-`ul` that is a descendant (but not necessarily a direct child) of that `li`. 
+`className`). Then find an `li` that is a descendant of that `ul`. Next find a
+`ul` that is a descendant (but not necessarily a direct child) of that `li`.
 Finally, find an `li` that is a descendant of that (second) `ul`."
 
->**Note**: The HTML property `class` is referred to as `className` in JavaScript.
+> **Note**: The HTML property `class` is referred to as `className` in
+> JavaScript.
 
 What does the second call to `querySelector()` say? Think about it for a
 minute, and then read on.
@@ -114,17 +110,16 @@ back when you're ready.
 
 ### `querySelectorAll()`
 
-`querySelectorAll()` works a lot like `querySelector()` — it accepts a
-string containing one or more selectors as its argument, and it searches
-starting from the object that it's called on  (either `document` or an element).
-However, instead of returning the first match, it returns a `NodeList`
-collection of all matching elements. A `NodeList` is similar to an
-`HTMLCollection`: it is an array-like structure containing, in this case, a list
-of DOM nodes.
+`querySelectorAll()` works a lot like `querySelector()` — it accepts a string
+containing one or more selectors as its argument, and it searches starting from
+the object that it's called on (either `document` or an element). However,
+instead of returning the first match, it returns a `NodeList` collection of all
+matching elements. A `NodeList` is similar to an `HTMLCollection`: it is an
+array-like structure containing, in this case, a list of DOM nodes.
 
 Given a document like
 
-``` html
+```html
 <body>
   <main id="app">
     <ul class="ranked-list">
@@ -140,13 +135,17 @@ Given a document like
 </body>
 ```
 
-If we called
+If we called:
 
 ```js
-document.getElementById('app').querySelectorAll('ul.ranked-list li');
+document.getElementById("app").querySelectorAll("ul.ranked-list li");
 ```
 
-We'd get back a list of nodes corresponding to: `<li>1</li>, <li>2</li>, <li>10</li>, <li>11</li>`.
+We'd get back a list of nodes corresponding to:
+
+```txt
+<li>1</li>, <li>2</li>, <li>10</li>, <li>11</li>
+```
 
 ## Conclusion
 
@@ -158,7 +157,7 @@ DOM trees.
 
 ## Resources
 
-* [document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
-* [document.querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+- [document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+- [document.querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
 
 [selectors]: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors
